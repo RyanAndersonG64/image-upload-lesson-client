@@ -49,3 +49,14 @@ export const createUser = ({ username, password, firstName, lastName }) => {
     console.log('ERROR: ', error)
   })
 }
+
+
+export const getImage = ({ auth }) => {
+  return axios ({
+    method: 'get',
+    url: `${baseUrl}/get-images`,
+    headers: {
+      Authorization: `Bearer ${auth.accessToken}`
+    }
+  })
+}
