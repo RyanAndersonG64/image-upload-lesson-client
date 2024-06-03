@@ -5,7 +5,7 @@ import { getImages } from './api'
 
 
 const Images = () => {
-    const [images, setImages] = useState([])
+    const [ images, setImages] = useState([])
     const { auth } = useContext(AuthContext)
 
     useEffect(
@@ -15,6 +15,7 @@ const Images = () => {
                     .then(response => {
                         console.log('Get Images Success')
                         setImages(response.data)
+                        console.log(Images)
                     })
                     .catch(error => console.log('Get Images Failure: ', error))
             }
@@ -24,7 +25,16 @@ const Images = () => {
 
     return (
         <div>
-            NOW WE RIOT
+            <hr />
+            <h1>Images</h1>
+            {Images && images.map(image => (
+                <div key={image.id}>
+                    <h3>{image.title}</h3>
+                    <img src={`http://127.0.0.1:8000/${image.image}`}
+                    style = {{width: '50%'}}
+                    />
+                </div>
+            ))}
         </div>
     )
 }

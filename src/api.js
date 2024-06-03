@@ -60,3 +60,18 @@ export const getImages = ({ auth }) => {
     }
   })
 }
+
+
+export const createImage = ({ auth, title, image}) => {
+  return axios ({
+    method: 'post',
+    url: `${baseUrl}/create-image/`,
+    headers: {
+      Authorization: `Bearer ${auth.accessToken}`,
+      'Content-Type': 'multipart/form-data'
+    },
+    data: {
+      image,
+      title,
+    }
+  })}
