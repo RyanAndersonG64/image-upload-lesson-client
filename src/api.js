@@ -51,7 +51,7 @@ export const createUser = ({ username, password, firstName, lastName }) => {
 }
 
 
-export const getImage = ({ auth }) => {
+export const getImages = ({ auth }) => {
   return axios ({
     method: 'get',
     url: `${baseUrl}/get-images`,
