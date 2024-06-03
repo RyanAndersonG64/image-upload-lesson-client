@@ -2,13 +2,13 @@ import { useContext, useState } from "react"
 import { AuthContext } from "./context"
 import { createImage } from "./api"
 
-const CreateImage = () => {
+const UploadImage = () => {
     const { auth } = useContext(AuthContext)
     const [image, setImage] = useState(undefined)
     const [title, setTitle] = useState('')
 
     const submit = () => {
-        createImage ({ auth, title, image })
+        CreateImage ({ auth, title, image })
         .then(response => {
             console.log('Create Image Success')
             console.log(response)
@@ -32,7 +32,7 @@ const CreateImage = () => {
                 />
             </div>
             <div>
-                <button onClick={() => submit}>
+                <button onClick={() => submit()}>
                     Submit
 
                 </button>
@@ -42,4 +42,4 @@ const CreateImage = () => {
 }
 
 
-export default CreateImage
+export default UploadImage

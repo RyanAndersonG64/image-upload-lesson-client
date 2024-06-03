@@ -1,11 +1,11 @@
 import Images from './Images'
-import CreateImage from './CreateImage'
+import UploadImage from './UploadImage'
 
 function App() {
 
   return (
     <div className="p-5">
-      <CreateImage />
+      <UploadImage />
       <Images />
 
     </div>

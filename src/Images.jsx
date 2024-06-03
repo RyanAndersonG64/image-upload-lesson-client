@@ -15,7 +15,7 @@ const Images = () => {
                     .then(response => {
                         console.log('Get Images Success')
                         setImages(response.data)
-                        console.log(Images)
+                        console.log(response.data)
                     })
                     .catch(error => console.log('Get Images Failure: ', error))
             }
